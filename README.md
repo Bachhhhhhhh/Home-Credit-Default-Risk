@@ -50,3 +50,15 @@ A significant part of this project is dedicated to feature engineering. Key tech
 *   A **Logistic Regression** classifier is the classification model implemented.
 *   **Hyperopt**, a library for Bayesian optimization, is used to efficiently search for the best hyperparameters for the model. The objective function for optimization is the ROC AUC score, evaluated using 3-fold cross-validation.
 *   **SMOTE (Synthetic Minority Over-sampling Technique)** is applied to the training data to address the class imbalance between defaulted and non-defaulted loans.
+  
+## Model Performance
+
+The final **Logistic Regression** model achieved a solid **ROC AUC score of 0.7742** in cross-validation, demonstrating a strong ability to differentiate between safe and risky loans.
+
+**Key predictive insights from the model include:**
+
+*   **External Credit History (`EXT_SOURCE`)**: This was the most influential factor, confirming that past credit behavior is a primary indicator of future risk.
+*   **Applicant Stability**: Age (`DAYS_BIRTH`) and employment duration (`DAYS_EMPLOYED`) were highly predictive, with younger or less experienced applicants posing a higher risk.
+*   **Financial Leverage**: Ratios like `CREDIT_TO_INCOME_RATIO` were critical, showing that a higher debt burden relative to income significantly increases the probability of default.
+
+These insights enable automated approvals for low-risk applicants and allow for more targeted, risk-based loan term adjustments for others.
